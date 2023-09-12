@@ -1,0 +1,30 @@
+.wrapper {
+    background-color: white;
+    width: 430px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.title {
+    margin-bottom: 46px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #A9AEA7;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.link {
+    margin-top: 4px;
+    cursor: pointer;
+    color: #7B85E2;
+}
