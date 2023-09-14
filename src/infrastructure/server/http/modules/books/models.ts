@@ -1,6 +1,8 @@
 export interface IBook {
     id: string,
     bookName: string,
+    bookFileUrl: string,
+    bookCoverFileUrl: string, 
     isbn10: string,
     isbn13: string,
     pagesCount: number,

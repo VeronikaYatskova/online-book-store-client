@@ -21,7 +21,7 @@ export const LoginFormWidget = observer(() => {
     }
 
     return (
-        <div className={styles.wrapper}>
+        <form className={styles.wrapper}>
             <div className={styles.title}>Login</div>
             <TextInput 
                 value={login}
@@ -35,6 +35,6 @@ export const LoginFormWidget = observer(() => {
                 <Button title='Login'/>
                 <div className={styles.link} onClick={onClickHandler}>Register</div>
             </div>
-        </div>
+        </form>
     )
 })
