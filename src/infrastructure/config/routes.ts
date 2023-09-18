@@ -21,12 +21,12 @@ export const routes = {
     },
     users: {
         main: {
-            path: '/',
+            path: '/user',
             goto: () => '/'
         },
         bookinfo: {
             path: ':bookId',
-            goto: (bookId: IBook['id']) => `/${bookId}`
+            goto: (bookId: IBook['id']) => `${bookId}`
         }
     },
     authors: {

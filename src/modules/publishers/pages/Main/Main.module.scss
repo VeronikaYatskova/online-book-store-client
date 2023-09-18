@@ -5,20 +5,19 @@
     align-content: center;
     margin-right: 250px;
     margin-left: 250px;
+    margin-bottom: 50px;
 }
 
-.title {
-    margin-top: 24px;
+.widgets {
+    display: flex;
     width: 100%;
     border-bottom: 2px solid #AFE3F3;
 }
 
-.text {
-    font-size: 16px;
+.widgetsName {
+    margin-right: 20px;
     color: #AFE3F3;
+    cursor: pointer;
 }
 
-.bookList {
-    margin-top: 19px;
-    margin-bottom: 50px;
-}
+

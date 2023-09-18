@@ -1,0 +1,23 @@
+.wrapper {
+    margin-top: 50px;
+}
+
+.commentWrapper {
+    border: 2px solid #AFE3F3;
+    color: #A9AEA7;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    .row {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+
+        .author {
+            margin-right: 20px;
+            font-size: 18px;
+            border-bottom: 1px solid #AFE3F3;
+        }
+    }
+}

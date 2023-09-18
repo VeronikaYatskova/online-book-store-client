@@ -124,7 +124,7 @@ export const MainPage = () => {
 
     return (
         <div className={styles.wrapper}>
-            <Title />
+            <Title title='Book Store'/>
             <SearchInputWidget />
             <div className={styles.title}>
                 <div className={styles.text}>Most popular</div>

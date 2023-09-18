@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    align-content: center;
+    margin-right: 250px;
+    margin-left: 250px;
+    margin-bottom: 50px;
+}
+
+.mainLink {
+    margin-top: 24px;
+    width: 100%;
+    border-bottom: 2px solid #AFE3F3;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 16px;
+    color: #AFE3F3;
+}
+
+.commentsInput {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 512px;
+    height: 166px;
+
+    textarea {
+        color: #A9AEA7;
+        font-size: 16px;
+        font-family: 'Dosis', sans-serif; 
+        outline: none;
+        width: 100%;
+        height: 100%;
+        border: none;
+        text-align: start;
+        border: 2px solid #AFE3F3;
+        border-radius: 5px;
+    }
+}

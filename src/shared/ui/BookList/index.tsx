@@ -10,7 +10,7 @@ interface IBookList {
 
 export const BookList: React.FC<IBookList> = (props: IBookList) => {
     const { books } = props
-
+    
     return (
         <div className={styles.wrapper}>
             {
