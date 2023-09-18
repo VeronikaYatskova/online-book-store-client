@@ -21,8 +21,8 @@ export const routes = {
     },
     users: {
         main: {
-            path: '/user',
-            goto: () => '/'
+            path: 'user',
+            goto: () => '/user'
         },
         bookinfo: {
             path: ':bookId',

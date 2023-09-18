@@ -20,6 +20,7 @@ export const TextInput: React.FC<TextInputProps> = ({ placeholder, type, onChang
 		<fieldset className={styles.textInput}>
 			{inputFocus && <legend>{placeholder}</legend>}
 			<input
+				className={styles.input}
 				value={value}
 				onBlur={onInputBlur}
 				onFocus={onInputFocus}

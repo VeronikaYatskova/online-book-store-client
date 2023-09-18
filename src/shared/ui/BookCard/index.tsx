@@ -20,7 +20,7 @@ export const BookCardWidget: React.FC<IBookCard> = observer(({ book }) => {
 
     return (
         <div className={styles.card} onClick={onClickHandler}>
-            <img src={book.bookCoverFileUrl} alt="image"/>
+            <img className={styles.bookCover} src={book.bookCoverFileUrl} alt='' />
         </div>
     )
 })

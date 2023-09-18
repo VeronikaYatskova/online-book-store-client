@@ -15,7 +15,7 @@ export const BookInfoCardWidget: React.FC<IBookInfo> = observer(({book, comments
     return (
         <div className={styles.wrapper}>
             <div className={styles.bookCover}>
-                {/* <img src={book.bookCoverFileUrl} alt='cover' /> */}
+                <img className={styles.bookCover} src={book.bookCoverFileUrl} alt='cover' />
             </div>
             <div className={styles.bookInfo}>
                 <div className={styles.bookName}>{book.bookName}</div>

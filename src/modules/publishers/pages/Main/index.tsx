@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import styles from './Main.module.scss'
 import { Title } from '../../../../shared/ui/Title'
 import { SimpleBookList } from '../../../../shared/ui/SimpleBookList';
-import { IBook } from '../../../../infrastructure/server/http/modules';
+import { IBook, IRequest } from '../../../../infrastructure/server/http/modules';
+import { SimpleRequestsList } from '../../widgets/SimpleRequestsList';
 
 export const PublisherPage = () => {
 
@@ -122,17 +123,27 @@ export const PublisherPage = () => {
             authors: ['author1', 'author2']
         }
     ]
+    const requests: IRequest[] = [
+        {
+            "id": '1',
+            "user": 'user 1'
+        },
+        {
+            "id": '2',
+            "user": 'user 2'
+        }
+    ]
     const [toDelete, setToDelete] = useState(false);
 
     return (
         <div className={styles.wrapper}>
             <Title title='Book Store Publisher' />
             <div className={styles.widgets}>
-                <div className={styles.widgetsName} onClick={() => setCurrentWidget(false)}>Published books</div>
-                <div className={styles.widgetsName} onClick={() => setCurrentWidget(true)}>Requests</div>
+                <div className={currentWidget === false ? styles.activeWidget : styles.widgetsName} onClick={() => setCurrentWidget(false)}>Published books</div>
+                <div className={currentWidget === true ? styles.activeWidget : styles.widgetsName} onClick={() => setCurrentWidget(true)}>Requests</div>
             </div>
             {
-                currentWidget && <div>Requests</div>
+                currentWidget && <SimpleRequestsList requests={requests} />
             }
             {
                 !currentWidget && <SimpleBookList books={books} onClick={() => setToDelete(true)}/>

@@ -20,7 +20,7 @@ export const BookInfoPage = () => {
         id: '1',
         bookName: 'book', 
         bookFileUrl: 'book url',
-        bookCoverFileUrl: 'https://unsplash.com/photos/Lsm5HOu3vik',
+        bookCoverFileUrl: 'https://images.unsplash.com/photo-1679629595664-87d8ab6f56cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         isbn10: 'isbn 10',
         isbn13: 'isbn 13',
         pagesCount: 10,
