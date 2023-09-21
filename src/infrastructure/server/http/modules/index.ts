@@ -1,3 +1,6 @@
 export * from './books'
 export * from './requests'
 export * from './comments'
+export * from './categories'
+export * from './authors'
+export * from './publishers'

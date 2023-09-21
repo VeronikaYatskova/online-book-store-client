@@ -8,6 +8,6 @@ const BookStoreApp = React.lazy(() => import('./modules/main'))
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
     <React.StrictMode>
-        <BookStoreApp role={Roles.USER} />
+        <BookStoreApp role={Roles.AUTHOR} />
     </React.StrictMode>
 )

@@ -9,7 +9,6 @@ interface ICommentsWidget {
 }
 
 export const CommentsWidget: React.FC<ICommentsWidget> = observer(({comments}) => {
-
     return (
         <div className={styles.wrapper}>
             {

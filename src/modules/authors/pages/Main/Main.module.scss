@@ -20,3 +20,85 @@
     color: #AFE3F3;
 }
 
+.background {
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.portalWrapper {
+    width: 660px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid #AFE3F3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textInput {
+    margin-left: 60px;
+}
+
+.additionalInfo {
+    height: 170px;
+    width: 300px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.info:nth-last-child(n+2) {
+    margin-bottom: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 0.5fr));
+    grid-gap: 126px;
+}
+
+.infoTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #A9AEA7;
+}
+
+.publishButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.selectField {
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background: white;
+    border: 2px solid #AFE3F3;
+    width: 208px;
+    height: 34px;
+    color: #A9AEA7;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Dosis', sans-serif;
+}
+
+.fileInput {
+}

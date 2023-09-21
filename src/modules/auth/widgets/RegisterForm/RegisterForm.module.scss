@@ -29,3 +29,37 @@
     cursor: pointer;
     color: #7B85E2;
 }
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error {
+    font-size: 16px;
+    color: rgb(116, 14, 34);
+    margin-bottom: 10px;
+}
+
+.textInput {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-color: #659FD4;
+    width: 320px;
+    background-color: white;
+}
+
+.button {
+    background-color: #AFE3F3;
+    color: white;
+    border-color: #659FD4;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 28px;
+    cursor: pointer;
+}

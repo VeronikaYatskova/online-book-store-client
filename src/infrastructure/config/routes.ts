@@ -6,8 +6,8 @@ export const routes = {
         return '/'
     },
     main: {
-        path: '',
-        goto: () => '/'
+        path: '/book-store',
+        goto: () => '/book-store'
     },
     auth: {
         login: {
@@ -25,7 +25,7 @@ export const routes = {
             goto: () => '/user'
         },
         bookinfo: {
-            path: ':bookId',
+            path: 'book-store/:bookId',
             goto: (bookId: IBook['id']) => `${bookId}`
         }
     },

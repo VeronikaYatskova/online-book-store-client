@@ -1,7 +1,7 @@
 .wrapper {
     background-color: white;
     width: 430px;
-    height: 350px;
+    height: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,4 +27,37 @@
     margin-top: 4px;
     cursor: pointer;
     color: #7B85E2;
+}
+
+.textInput {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-color: #659FD4;
+    width: 320px;
+    background-color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.error {
+    font-size: 16px;
+    color: rgb(116, 14, 34);
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #AFE3F3;
+    color: white;
+    border-color: #659FD4;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 28px;
+    cursor: pointer;
 }
