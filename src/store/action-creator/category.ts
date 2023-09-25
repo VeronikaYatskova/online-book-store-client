@@ -17,10 +17,9 @@ export const fetchCategories: any = () => {
     }
 
     return async (dispatch: Dispatch<CategoryAction>) => {
-
         try {
             dispatch({type: CategoriesActionTypes.FETCH_CATEGORIES})
-            const response = await axios.get('http://localhost:7101/categories', config)
+            const response = await axios.get(path, config)
             
             console.log(response.data)
 

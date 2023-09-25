@@ -7,6 +7,7 @@ import { Button, Title } from '../../../../shared/ui'
 import { Portal } from '../../../../shared/ui/Portal'
 import { useTypedSelector } from '../../../../store/hooks/useTypedSelector'
 import { fetchCategories } from '../../../../store/action-creator/category'
+import { fetchRequestRefuse } from '../../../../store/action-creator/request'
 
 interface IRequestCard {
     request: IRequest
@@ -43,6 +44,10 @@ export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
         dispatch(fetchCategories())
     }, [])
 
+    const handleRefuseClick = () => {
+        dispatch(fetchRequestRefuse(request.id))
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.bookCover}>
@@ -56,7 +61,9 @@ export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
                 <div className={styles.button} onClick={() => openPublishingPortal((value) => !value)}>
                     <Button title='Publish'/>
                 </div>
-                <div className={styles.button}><Button title='Refuse'/></div>
+                <div className={styles.button} onClick={() => handleRefuseClick()}>
+                    <Button title='Refuse'/>
+                </div>
             </div>
             {
                 publishingPortal &&
@@ -109,7 +116,16 @@ export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
                                         </div>
                                         <div className={styles.info}>
                                             <div className={styles.infoTitle}>Authors</div>
-                                            
+                                            <select className={styles.selectField}>
+                                                <option selected disabled>Choose a category</option>
+                                                {
+                                                    categories.map((category) => {
+                                                        return (
+                                                            <option className={styles.option} onClick={() => setCategory(category.categoryGuid)}>{category.categoryName}</option>
+                                                        )
+                                                    })
+                                                }
+                                            </select>
                                         </div>
                                         <div className={styles.info}>
                                             <div className={styles.infoTitle}>FileName</div>

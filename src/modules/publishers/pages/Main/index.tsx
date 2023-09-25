@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../../../store/hooks/useTypedSelector';
 
 import styles from './Main.module.scss'
 import { Title } from '../../../../shared/ui/Title'
 import { SimpleBookList } from '../../../../shared/ui/SimpleBookList';
 import { IBook, IRequest } from '../../../../infrastructure/server/http/modules';
 import { SimpleRequestsList } from '../../widgets/SimpleRequestsList';
+import { fetchRequests } from '../../../../store/action-creator/request';
 
 export const PublisherPage = () => {
 
@@ -123,16 +127,14 @@ export const PublisherPage = () => {
             authors: ['author1', 'author2']
         }
     ]
-    const requests: IRequest[] = [
-        {
-            "id": '1',
-            "user": 'user 1'
-        },
-        {
-            "id": '2',
-            "user": 'user 2'
-        }
-    ]
+
+    const dispatch = useDispatch()
+    const {requests, loading, error} = useTypedSelector(state => state.request)
+
+    useEffect(() => {
+        dispatch(fetchRequests())
+    }, [])
+
     const [toDelete, setToDelete] = useState(false);
 
     return (
