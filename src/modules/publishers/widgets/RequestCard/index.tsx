@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import styles from './RequestCard.module.scss'
 import { IRequest, ICategory, IAuthor } from '../../../../infrastructure/server/http/modules'
 import { Button, Title } from '../../../../shared/ui'
 import { Portal } from '../../../../shared/ui/Portal'
+import { useTypedSelector } from '../../../../store/hooks/useTypedSelector'
+import { fetchCategories } from '../../../../store/action-creator/category'
 
 interface IRequestCard {
     request: IRequest
@@ -12,16 +15,7 @@ interface IRequestCard {
 export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
     const { request } = props
     const [publishingPortal, openPublishingPortal] = useState(false)
-    const categories:ICategory[] = [
-        {
-            id: '1',
-            name: 'Fiction'
-        },
-        {
-            id: '2',
-            name: 'Science'
-        }
-    ]
+    
     const [selectedCategory, setCategory] = useState('')
     const [selectedAuthors, setSelectedAuthors] = useState(null);
     const authors: IAuthor[] = [
@@ -42,7 +36,12 @@ export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
         return {type: author.name, label: author.name}
     })
 
-    console.log(selectedAuthors)
+    const dispatch = useDispatch()
+    const {categories, loading, error} = useTypedSelector(state => state.category)
+
+    useEffect(() => {
+        dispatch(fetchCategories())
+    }, [])
 
     return (
         <div className={styles.wrapper}>
@@ -102,7 +101,7 @@ export const RequestCard: React.FC<IRequestCard> = (props:IRequestCard) => {
                                                 {
                                                     categories.map((category) => {
                                                         return (
-                                                            <option className={styles.option} onClick={() => setCategory(category.id)}>{category.name}</option>
+                                                            <option className={styles.option} onClick={() => setCategory(category.categoryGuid)}>{category.categoryName}</option>
                                                         )
                                                     })
                                                 }
